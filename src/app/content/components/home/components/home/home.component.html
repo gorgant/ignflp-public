@@ -1,8 +1,9 @@
-<div class="home-content-container" fxLayout="column" fxLayoutAlign="center center">
+<div class="home-content-container" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="32px">
   
   <app-page-hero [heroData]="heroData">
     <a class="hero-button" [href]="[buildYourOwnPlanUrl]" mat-raised-button color="primary">Build Your Own Plan</a>
     <a class="hero-button" [href]="[tryOneOfOursUrl]" mat-raised-button >Try One of Ours</a>
   </app-page-hero>
+  <app-how-it-works [buildYourOwnPlanUrl]="buildYourOwnPlanUrl" [tryOneOfOursUrl]="tryOneOfOursUrl"></app-how-it-works>
 
 </div>

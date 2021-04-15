@@ -1,13 +1,8 @@
 @import "../../../variables";
 
-// mat-toolbar {
-//   max-width: 1200px;
-// }
-
 .content-container {
   width: 100%;
-  margin-left: 80px;
-
+  max-width: 1140px;
 }
 
 .logo-image {
@@ -84,23 +79,6 @@ a {
   width: 100%;
 }
 
-// .login-button {
-//   color: $primary;
-// }
-
-.nav-actions {
-  margin-right: 80px;
-}
-
 .signup-button:hover {
   background-color: $accent;
-}
-
-@media screen and (max-width: $mobile-cutoff-width) {
-  
-  .content-container {
-    width: 100%;
-    margin-left: 0px;
-  }
-
 }

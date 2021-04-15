@@ -1,0 +1,58 @@
+<div class="component-container" fxLayout="column" fxLayoutGap="64px">
+  <h1 class="component-title mat-display-1">How IgnyteFit Works</h1>
+  <div class="product-step" fxLayout="column" fxLayoutGap="16px">
+    <h2 class="step-header mat-title">Step 1</h2>
+    <div class="step-details" fxLayout="column" fxLayoutAlign="center center" fxLayout.gt-sm="row">
+      <div class="item-container" fxLayout="column">
+        <div class="item-icon">
+          <mat-icon inline="true">handyman</mat-icon>
+        </div>
+        <h4 class="item-header">Build Your Own Plan</h4>
+        <p class="item-body">Craft your own daily exercise plan by combining workouts from any of your favorite YouTube fitness trainers</p>
+      </div>
+      <div class="item-container" fxLayout="column">
+        <div class="step-1-divider">or</div>
+      </div>
+      <div class="item-container" fxLayout="column">
+        <div class="item-icon playlist-icon">
+          <mat-icon [inline]="true">playlist_play</mat-icon>
+        </div>
+        <h4 class="item-header">Try One of Ours</h4>
+        <p class="item-body">Browse our carefully curated training programs showcasing the best online workouts from top fitness experts</p>
+      </div>
+    </div>
+  </div>
+  <div class="product-step" fxLayout="column" fxLayoutGap="16px">
+    <h2 class="step-header mat-title">Step 2</h2>
+    <div class="step-details" fxLayout="column" fxLayoutAlign="center center" fxLayout.gt-sm="row">
+      <div class="item-container" fxLayout="column">
+        <div class="item-icon">
+          <mat-icon inline="true">outlined_flag</mat-icon>
+        </div>
+        <h4 class="item-header">Set Goals</h4>
+        <p class="item-body">Commit to a workout program that is tailored to your availability and fitness goals</p>
+      </div>
+      <div class="item-container" fxLayout="column">
+        <div class="item-icon">
+          <mat-icon inline="true">check_circle_outline</mat-icon>
+        </div>
+        <h4 class="item-header">Track Progress</h4>
+        <p class="item-body">Keep track of the workouts you've completed and your progress toward finishing your program</p>
+      </div>
+      <div class="item-container" fxLayout="column">
+        <div class="item-icon">
+          <mat-icon [inline]="true">military_tech</mat-icon>
+        </div>
+        <h4 class="item-header">Earn Badges</h4>
+        <p class="item-body">Get rewarded for completing your programs and setting other exciting fitness milestones</p>
+      </div>
+    </div>
+  </div>
+  <div class="cta-container" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="32px">
+    <h2 class="cta-header">Ready to Get Started?</h2>
+    <div class="cta-box" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="16px">
+      <a class="hero-button" [href]="[buildYourOwnPlanUrl]" mat-raised-button color="primary">Build Your Plan</a>
+      <a class="hero-button" [href]="[tryOneOfOursUrl]" mat-raised-button >Try One of Ours</a>
+    </div>
+  </div>
+</div>

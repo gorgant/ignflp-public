@@ -51,29 +51,6 @@ export class PageHeroComponent implements OnInit, OnDestroy {
     this.pageTitle = this.heroData.pageTitle;
     this.pageSubtitle = this.heroData[PageHeroKeys.PAGE_HERO_SUBTITLE];
     this.actionMessage = this.heroData.actionMessage;
-
-    if (this.heroData.isPost) {
-      this.initalizePostConfig();
-    } else {
-      this.initalizeNonPostConfig();
-    }
-
-  }
-
-  private initalizePostConfig() {
-    this.isPost = true;
-    this.heroBackgroundImageAlignValue = 'center center';
-    this.heroContentContainerAlignValue = 'end center';
-    this.heroContentContainerFlexValue = '70';
-    this.heroActionContainerFlexValue = '30';
-    this.heroContentContainerMobileFlexValue = '70';
-    this.heroActionContainerMobileFlexValue = '30';
-
-    const imageSrcSet = this.heroData.imageProps!.srcset.split(' ');
-    this.imageUrl = imageSrcSet[imageSrcSet.length - 2] ? imageSrcSet[imageSrcSet.length - 2] : PublicImagePaths.POST_HERO;
-  }
-
-  private initalizeNonPostConfig() {
     this.imageUrl = this.heroData.imageProps!.src;
   }
 

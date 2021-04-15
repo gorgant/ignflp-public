@@ -1,0 +1,104 @@
+@import "../../../../../variables";
+
+.component-title {
+  text-align: center;
+}
+
+.step-header {
+  background-color: $primary;
+  color: white;
+  text-align: center;
+  padding: 16px;
+  margin: 0px; // Ensure text stays centered in step boxes
+}
+
+.item-container {
+  padding: 72px;
+}
+
+.item-icon {
+  text-align: center;
+  color: $primary;
+  // font-size: 64px;
+  // height: 64px;
+  @include md-icon-size(64px);
+  margin-bottom: 16px;
+}
+
+.playlist-icon {
+  @include md-icon-size(80px);
+  margin-top: -8px;
+  margin-bottom: 8px;
+}
+
+.item-header {
+  text-align: center;
+  color: $primary;
+  font-size: 32px;
+  font-weight: 300;
+}
+
+.item-body {
+  text-align: center;
+  color: $font-subheader-color;
+  line-height: 1.4em;
+}
+
+.step-1-divider {
+  font-size: 64px;
+  font-weight: 200;
+  color: $font-subheader-color;
+}
+
+.cta-header {
+  text-align: center;
+  color: $primary;
+  font-size: 32px;
+  font-weight: 300;
+}
+
+.cta-box {
+  width: 100%;
+  max-width: 600px;
+  padding: 32px;
+  border: 2px solid $primary;
+}
+
+@media screen and (max-width: $mobile-cutoff-width) {
+  .component-container {
+    margin: 16px;
+  }
+
+  .component-title {
+    font-size: 32px;
+  }
+
+  .item-container {
+    padding: 16px;
+  }
+  
+  .item-icon {
+    @include md-icon-size(40px);
+    margin-bottom: 16px;
+  }
+  
+  .playlist-icon {
+    @include md-icon-size(56px);
+    margin-top: 0px;
+    margin-bottom: 12px;
+  }
+  
+  .item-header {
+    font-size: 24px;
+  }
+  
+  .item-body {
+    
+  }
+  
+  .step-1-divider {
+    font-size: 32px;
+  }
+
+
+}

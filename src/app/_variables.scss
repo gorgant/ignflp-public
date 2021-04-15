@@ -118,6 +118,8 @@ $font-weight-medium: 500;
 $font-weight-bold: 700;
 $font-weight-black: 900;
 
+$font-subheader-color: #707070;
+
 $logo-font-family: "Mulish";
 $logo-font-default-size: 30px;
 $logo-font-mobile-size: 20px;
@@ -241,4 +243,11 @@ $opacity-minimal: 0.1;
             padding-left: 30px;
         }
     }
+}
+
+@mixin md-icon-size($size: 24px) {
+  font-size: $size;
+  height: $size;
+//   width: $size;
+  line-height: $size;
 }

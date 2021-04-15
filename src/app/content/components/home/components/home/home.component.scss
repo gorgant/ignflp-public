@@ -11,6 +11,12 @@ app-page-hero {
   width: 100%;
 }
 
+app-how-it-works {
+  width: 100%;
+  max-width: 1140px;
+  margin-bottom: 64px;
+}
+
 @media screen and (max-width: $mobile-cutoff-width) {
   .hero-button {
     width: auto;

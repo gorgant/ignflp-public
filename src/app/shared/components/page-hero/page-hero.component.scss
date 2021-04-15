@@ -9,27 +9,12 @@
 }
 
 .hero-content-container {
-  margin-left: 86px;
-  padding-left: 16px;
-  padding-right: 16px;
-  max-width: 100%; // Ensures padding doesn't cause side-scroll on smallest devices
-}
-
-.about-me-blurb-container {
-  margin-left: 86px;
-  padding-left: 16px;
-  padding-right: 16px;
-  max-width: 100%; // Ensures padding doesn't cause side-scroll on smallest devices
-}
-
-.post-hero-content-container {
-  margin-left: 0px;
-  text-align: center;
+  width: 100%;
+  max-width: 1140px; // Ensures padding doesn't cause side-scroll on smallest devices
 }
 
 .hero-text-container {
   color: white;
-  max-width: 1000px;
 }
 
 .hero-title {
@@ -40,7 +25,6 @@
 .hero-subtitle {
   font-size: 56px;
   font-weight: $font-weight-light;
-  width: 100%;
   margin-top: 40px;
 }
 
@@ -53,7 +37,6 @@
 }
 
 .hero-action-container {
-  width: 100%;
   font-size: 22px;
   color: white;
   margin-bottom: 16px;
@@ -78,14 +61,6 @@
 
   .hero-background-image {
     background-position: 75%; // Center MD's face on mobile screens (requires MD to be on right side of image)
-  }
-
-  .hero-content-container {
-    margin-left: 0px;
-  }
-
-  .about-me-blurb-container {
-    margin-left: 0px;
   }
 
   .hero-text-container {
