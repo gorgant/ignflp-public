@@ -1,0 +1,14 @@
+<div class="container" fxLayout="column" fxLayoutAlign="center center">
+  <app-header></app-header>
+  <mat-sidenav-container fxFlex="1">
+    <mat-sidenav #sidenav mode="over" [fixedInViewport]="true" position="end" autoFocus="false">
+      <app-sidenav></app-sidenav>
+    </mat-sidenav>
+    <mat-sidenav-content fxLayoutAlign="center center">
+      <ng-container>
+        <router-outlet></router-outlet>
+      </ng-container>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+  <app-footer [appVersion]="appVersion"></app-footer>
+</div>

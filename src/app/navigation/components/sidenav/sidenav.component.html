@@ -1,0 +1,39 @@
+<mat-nav-list fxLayout="column">
+
+  <div>
+    <a mat-list-item 
+      routerLinkActive="active-list-item"
+      [routerLink]="appRoutes.HOME"
+      [routerLinkActiveOptions]="{exact: true}"
+      (click)="onToggleSideNav()">
+      <mat-icon mat-list-icon>home</mat-icon>
+      <p mat-line>Home</p>
+    </a>
+
+    <a mat-list-item 
+      routerLinkActive="active-list-item"
+      [routerLink]="appRoutes.PRIVACY_POLICY"
+      (click)="onToggleSideNav()">
+      <mat-icon mat-list-icon>explore</mat-icon>
+      <p mat-line>How Ignyte Works</p>
+    </a>
+    
+    <a mat-list-item 
+      routerLinkActive="active-list-item"
+      [routerLink]="appRoutes.TERMS_AND_CONDITIONS"
+      (click)="onToggleSideNav()">
+      <mat-icon mat-list-icon>chrome_reader_mode</mat-icon>
+      <p mat-line>About Us</p>
+    </a>
+  </div>
+  
+
+  
+  <div class="action-buttons-container" fxLayout="column" fxLayoutGap="16px" fxFlex fxLayoutAlign="flex-end">
+    <!-- <mat-divider></mat-divider> -->
+    <a class="signup-button" mat-raised-button href="#" color="primary">SIGN UP</a>
+    <a class="login-button" mat-button href="#">LOGIN</a>
+  </div>
+  
+
+</mat-nav-list>

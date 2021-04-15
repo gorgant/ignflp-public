@@ -1,0 +1,77 @@
+<div class="footer-container" fxLayout="column" fxLayoutAlign="center center">
+  <div class="footer-content" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="32px" >
+    
+    <div fxLayout="column" fxLayoutAlign="center center" fxLayout.gt-sm="row" fxLayoutAlign.gt-sm="center center" fxLayoutGap.gt-sm="64px">
+      <div class="site-map" fxLayout="row" fxLayoutAlign="start start" fxLayoutGap="16px">
+        <div class="home" fxLayout="column">
+          <div class="title">
+            Home
+          </div>
+          <ul class="subtopics">
+            <li>
+              <a class="nav-item" routerLinkActive="nav-item-active" [routerLink]="appRoutes.HOME">Home Page</a>
+            </li>
+          </ul>
+        </div>
+        <div class="about-me" fxLayout="column">
+          <div class="title">
+            Ignyte Fit
+          </div>
+          <ul class="subtopics">
+            <li>
+              <a class="nav-item" routerLinkActive="nav-item-active" [routerLink]="appRoutes.HOME">How Ignyte Works</a>
+            </li>
+          </ul>
+        </div>
+        <div class="products" fxLayout="column">
+          <div class="title">
+            About Us
+          </div>
+          <ul class="subtopics">
+            <li>
+              <a class="nav-item" routerLinkActive="nav-item-active" [routerLink]="appRoutes.HOME">About Us</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="social">
+        <div class="social-header">
+          Check us out on social media!
+        </div>
+        <div fxLayout="row" fxLayoutGap="16px">
+          <a target="_blank" rel="noopener noreferrer" [href]="socialUrls.IGNFLP_YOUTUBE">
+            <img class="social-icons" [src]="socialIconPaths.YOUTUBE_ICON" alt="YouTube Channel Icon">
+          </a>
+          <a target="_blank" rel="noopener noreferrer" [href]="socialUrls.IGNFLP_INSTAGRAM">
+            <img class="social-icons" [src]="socialIconPaths.INSTAGRAM_ICON" alt="Instagram Icon">
+          </a>
+          <a target="_blank" rel="noopener noreferrer" [href]="socialUrls.IGNFLP_TWITTER">
+            <img class="social-icons" [src]="socialIconPaths.TWITTER_ICON" alt="Twitter Icon">
+          </a>
+          <a target="_blank" rel="noopener noreferrer" [href]="socialUrls.IGNFLP_FACEBOOK">
+            <img class="social-icons" [src]="socialIconPaths.FACEBOOK_ICON" alt="Facebook Icon">
+          </a>
+          <a target="_blank" rel="noopener noreferrer" [href]="socialUrls.IGNFLP_LINKEDIN">
+            <img class="social-icons" [src]="socialIconPaths.LINKEDIN_ICON" alt="LinkedIn Icon">
+          </a>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+  <div class="footer-base" fxLayout="column" fxLayoutAlign="center center">
+    <div class="legal-container" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="16px">
+      <div class="copyright" (click)="toggleShowAppVersion()">&copy; {{ legalBusinessName }}, All Rights Reserved {{ currentDate | date: 'yyyy' }}</div>
+      <!-- <div class="legal-spacer">|</div> -->
+      <a class="legal-link" [routerLink]="appRoutes.PRIVACY_POLICY">Privacy Policy</a>
+      <!-- <div class="legal-spacer">|</div> -->
+      <a class="legal-link" [routerLink]="appRoutes.TERMS_AND_CONDITIONS">Terms and Conditions</a>
+      
+    </div>
+    <p *ngIf="showAppVersion">{{ appVersion }}</p>
+  </div>
+</div>
+
+

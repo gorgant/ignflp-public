@@ -1,0 +1,32 @@
+@import "../../../variables";
+
+// mat-nav-list {
+//   height: 100%;
+// }
+
+mat-list-item {
+  opacity: $inactive-item-opacity;
+}
+
+.active-list-item {
+  color: $accent;
+  background: rgba(0, 0, 0, 0.04);
+  opacity: $active-item-opacity;
+}
+
+.action-buttons-container {
+  margin-top: 64px;
+}
+
+// .action-buttons-container {
+//   height: 100%;
+// }
+
+.signup-button, .login-button {
+  margin: 8px;
+}
+
+// .active-list-item p {
+//   font-weight: $font-weight-medium;
+// }
+

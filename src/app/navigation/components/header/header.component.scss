@@ -1,0 +1,106 @@
+@import "../../../variables";
+
+// mat-toolbar {
+//   max-width: 1200px;
+// }
+
+.content-container {
+  width: 100%;
+  margin-left: 80px;
+
+}
+
+.logo-image {
+  padding-top: 4px;
+  width: 180px;
+}
+
+// Removes ordered list styles
+.nav-items {
+  list-style: none;
+  color: #707070;
+}
+
+// Removes the hyperlink effects from the nav items (and logo)
+a {
+  text-decoration: none;
+  color: #707070;
+}
+
+// Target all items except logo
+.nav-item {
+  font-size: 16px;
+  font-weight: $font-weight-medium;
+  text-transform: uppercase;
+  opacity: $inactive-item-opacity;
+}
+
+.contact {
+  // This makes the padding around the text regular (default is 32px)
+  line-height: 16px;
+  padding: 8px;
+  border: 1px #707070 solid;
+}
+
+.nav-item-active {
+  opacity: $active-item-opacity;
+  font-weight: $font-weight-medium;
+}
+
+.nav-item:hover {
+  opacity: $active-item-opacity;
+}
+
+// Hover animations inspired by: https://codepen.io/maheshambure21/pen/QwXaRw
+
+// Configure nav items to properly display the hover animation
+.nav-item {
+  padding-bottom: 8px;
+  position: relative;
+}
+
+// Constuct content that will be activated on hover
+.nav-item:not(.contact):after {
+  transition: all 400ms;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 0%;
+  content: '.';
+  color: transparent;
+  background: #707070;
+  height: 1px;
+}
+
+// Make underline visibile on hover
+.nav-item:not(.contact):hover:after {
+  width: 100%;
+}
+
+// Keep underline visible if active item
+.nav-item-active.nav-item:not(.contact):after {
+  width: 100%;
+}
+
+// .login-button {
+//   color: $primary;
+// }
+
+.nav-actions {
+  margin-right: 80px;
+}
+
+.signup-button:hover {
+  background-color: $accent;
+}
+
+@media screen and (max-width: $mobile-cutoff-width) {
+  
+  .content-container {
+    width: 100%;
+    margin-left: 0px;
+  }
+
+}
