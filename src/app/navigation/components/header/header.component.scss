@@ -1,5 +1,10 @@
 @import "../../../variables";
 
+mat-toolbar {
+  color: white;
+  background-color: white;
+}
+
 .content-container {
   width: 100%;
   max-width: 1140px;
@@ -10,16 +15,20 @@
   width: 180px;
 }
 
+.menu-button {
+  color: black;
+}
+
 // Removes ordered list styles
 .nav-items {
   list-style: none;
-  color: #707070;
+  color: $font-subheader-color;
 }
 
 // Removes the hyperlink effects from the nav items (and logo)
 a {
   text-decoration: none;
-  color: #707070;
+  color: $font-subheader-color;
 }
 
 // Target all items except logo
@@ -34,7 +43,7 @@ a {
   // This makes the padding around the text regular (default is 32px)
   line-height: 16px;
   padding: 8px;
-  border: 1px #707070 solid;
+  border: 1px $font-subheader-color solid;
 }
 
 .nav-item-active {
@@ -65,7 +74,7 @@ a {
   width: 0%;
   content: '.';
   color: transparent;
-  background: #707070;
+  background: $font-subheader-color;
   height: 1px;
 }
 

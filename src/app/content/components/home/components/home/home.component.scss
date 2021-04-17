@@ -5,7 +5,6 @@
 :host {
   width: 100%;
   max-width: $max-screen-width;
-  scroll-behavior: smooth;
 }
 
 app-page-hero {
@@ -25,9 +24,9 @@ app-about {
   margin-bottom: 64px;
 }
 
-@media screen and (max-width: $mobile-cutoff-width) {
-  .hero-button {
-    width: auto;
-    margin-top: -32px;
-  }
-}
+// @media screen and (max-width: $mobile-cutoff-width) {
+//   .hero-button {
+//     width: auto;
+//     margin-top: -32px;
+//   }
+// }

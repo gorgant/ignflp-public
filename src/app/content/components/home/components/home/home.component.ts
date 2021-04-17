@@ -61,6 +61,9 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     this.fragmentSubscription = this.route.fragment.subscribe(fragment => { 
 
       switch (fragment) {
+        case this.appFragments.HOME:
+          this.homeElementRef.nativeElement.scrollIntoView({behavior: "smooth"});
+          break;
         case this.appFragments.HOW_IGNYTE_WORKS:
           this.howItWorksElementRef.nativeElement.scrollIntoView({behavior: "smooth"});
           break;
@@ -68,7 +71,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
           this.aboutElementRef.nativeElement.scrollIntoView({behavior: "smooth"});
           break;
         default:
-          this.homeElementRef.nativeElement.scrollIntoView({behavior: "smooth"});;
+          break;
       }      
     });
   }
