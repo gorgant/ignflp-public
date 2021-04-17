@@ -7,6 +7,7 @@ import { PublicAppRoutes } from 'shared-models/routes-and-paths/app-routes.model
 import { SocialUrls } from 'shared-models/meta/social-urls.model';
 import { LegalBusinessNames } from 'shared-models/meta/business-names.model';
 import { PublicIconPaths } from 'shared-models/routes-and-paths/icon-paths.model';
+import { PublicAppFragments } from 'shared-models/routes-and-paths/app-fragments.model';
 
 @Component({
   selector: 'app-footer',
@@ -19,6 +20,7 @@ export class FooterComponent implements OnInit {
   showAppVersion = false;
   legalBusinessName = LegalBusinessNames.IGNFLP;
   socialIconPaths = PublicIconPaths;
+  appFragments = PublicAppFragments;
 
   activeUrl$!: Observable<string>;
   appRoutes = PublicAppRoutes;

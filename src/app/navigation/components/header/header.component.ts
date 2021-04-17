@@ -7,6 +7,8 @@ import { PublicAppRoutes } from 'shared-models/routes-and-paths/app-routes.model
 import { ShorthandBusinessNames } from 'shared-models/meta/business-names.model';
 import { MatButton } from '@angular/material/button';
 import { LogoPaths } from 'shared-models/routes-and-paths/logo-paths.model';
+import { PublicAppFragments } from 'shared-models/routes-and-paths/app-fragments.model';
+import { WebSiteUrls } from 'shared-models/meta/web-urls.model';
 
 @Component({
   selector: 'app-header',
@@ -20,6 +22,10 @@ export class HeaderComponent implements OnInit {
   appRoutes = PublicAppRoutes;
   shorthandBusinessName = ShorthandBusinessNames.IGNFLP;
   logoPaths = LogoPaths;
+  appFragments = PublicAppFragments;
+  ignyteAppSignup = WebSiteUrls.IGNFAPP_SIGNUP;
+  ignyteAppLogin = WebSiteUrls.IGNFAPP_LOGIN;
+  
 
   constructor(
     private uiService: UiService,
@@ -37,8 +43,6 @@ export class HeaderComponent implements OnInit {
       })
     );
   }
-
-
 
   // Open/close side nav
   onToggleSidenav() {

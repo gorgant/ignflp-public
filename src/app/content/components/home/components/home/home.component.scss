@@ -5,6 +5,7 @@
 :host {
   width: 100%;
   max-width: $max-screen-width;
+  scroll-behavior: smooth;
 }
 
 app-page-hero {
