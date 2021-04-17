@@ -17,6 +17,13 @@ app-how-it-works {
   margin-bottom: 64px;
 }
 
+app-about {
+  margin-top: 64px;
+  width: 100%;
+  max-width: 1140px;
+  margin-bottom: 64px;
+}
+
 @media screen and (max-width: $mobile-cutoff-width) {
   .hero-button {
     width: auto;
