@@ -1,8 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
 import { metaTagDefaults } from 'shared-models/meta/metatags.model';
-import { PublicAppRoutes } from 'shared-models/routes-and-paths/app-routes.model';
-import { AnalyticsService } from './core/services/analytics.service';
 import { UiService } from './core/services/ui.service';
 
 @Component({
@@ -18,22 +16,11 @@ export class AppComponent implements OnInit {
 
   constructor(
     private uiService: UiService,
-    private analyticsService: AnalyticsService
+    
   ) {}
 
   ngOnInit() {
     this.configureSideNav();
-    this.configSeoAndAnalytics();
-  }
-
-  private configSeoAndAnalytics() {
-
-    const title = metaTagDefaults.ignflpPublic.metaTagDefaultTitle;
-    const description = metaTagDefaults.ignflpPublic.metaTagDefaultDescription;
-    const localImagePath = metaTagDefaults.ignflpPublic.metaTagDefaultImage;
-    const canonicalUrlPath = PublicAppRoutes.HOME;
-
-    this.analyticsService.setSeoTags(title, description, localImagePath, canonicalUrlPath);
   }
 
   // Handles sideNav clicks

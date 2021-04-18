@@ -1,6 +1,7 @@
-import { Injectable } from '@angular/core';
-import { Subject, BehaviorSubject } from 'rxjs';
+import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
+import { Subject, BehaviorSubject, Observable, ReplaySubject } from 'rxjs';
 import { BreakpointObserver, BreakpointState } from '@angular/cdk/layout';
+import { isPlatformServer } from '@angular/common';
 
 @Injectable({
   providedIn: 'root'
@@ -9,11 +10,14 @@ export class UiService {
 
   sideNavSignal$ = new Subject<void>();
   screenIsMobile$ = new BehaviorSubject(true);
+  private angularUniversalDetected$ = new ReplaySubject<boolean>();
 
   constructor(
     private breakpointObserver: BreakpointObserver,
+    @Inject(PLATFORM_ID) private platformId: {},
   ) {
     this.monitorScreenSize();
+    this.checkForAngularUniversal();
    }
 
   dispatchSideNavClick() {
@@ -32,6 +36,19 @@ export class UiService {
         }
       });
 
+  }
+
+  private checkForAngularUniversal() {
+    if (isPlatformServer(this.platformId)) {
+      this.angularUniversalDetected$.next(true);
+      console.log('Angular Universal detected');
+    } else {
+      this.angularUniversalDetected$.next(false);
+    }
+  }
+
+  get isAngularUniversal(): Observable<boolean> {
+    return this.angularUniversalDetected$;
   }
 
 }

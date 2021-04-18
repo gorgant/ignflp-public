@@ -3,10 +3,12 @@ import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { PageHeroData } from 'shared-models/components/page-hero-data.model';
 import { ImageProps } from 'shared-models/images/image-props.model';
-import { metaTagsContentPages } from 'shared-models/meta/metatags.model';
+import { metaTagDefaults, metaTagsContentPages } from 'shared-models/meta/metatags.model';
 import { WebSiteUrls } from 'shared-models/meta/web-urls.model';
 import { PublicAppFragments } from 'shared-models/routes-and-paths/app-fragments.model';
+import { PublicAppRoutes } from 'shared-models/routes-and-paths/app-routes.model';
 import { PublicImagePaths } from 'shared-models/routes-and-paths/image-paths.model';
+import { AnalyticsService } from 'src/app/core/services/analytics/analytics.service';
 
 @Component({
   selector: 'app-home',
@@ -27,16 +29,30 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   @ViewChild('about') aboutElementRef!: ElementRef;
 
   constructor(
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private analyticsService: AnalyticsService
   ) { }
 
   ngOnInit(): void {
     this.initializeHeroData();
+    this.configSeoAndAnalytics();
   }
 
   
   ngAfterViewInit(): void {
     this.scrollToFragment();
+  }
+
+  private configSeoAndAnalytics() {
+
+    const title = metaTagDefaults.ignflpPublic.metaTagDefaultTitle;
+    const description = metaTagDefaults.ignflpPublic.metaTagDefaultDescription;
+    const localImagePath = metaTagDefaults.ignflpPublic.metaTagDefaultImage;
+    const canonicalUrlPath = PublicAppRoutes.HOME;
+
+    this.analyticsService.setSeoTags(title, description, localImagePath, canonicalUrlPath);
+
+    this.analyticsService.logPageViewWithCustomDimensions(canonicalUrlPath);
   }
 
   private initializeHeroData() {

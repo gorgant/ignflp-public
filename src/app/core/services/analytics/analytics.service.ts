@@ -4,6 +4,11 @@ import { DOCUMENT } from '@angular/common';
 import { environment } from 'src/environments/environment';
 import { metaTagDefaults } from 'shared-models/meta/metatags.model';
 import { WebDomains } from 'shared-models/meta/web-urls.model';
+import { PartialCustomDimensionsSet } from 'shared-models/analytics/custom-dimensions-set.model';
+import { DataLayerService } from './data-layer.service';
+import { Router } from '@angular/router';
+import { UiService } from '../ui.service';
+import { map, take, tap } from 'rxjs/operators';
 
 // Courtesy of: https://medium.com/quick-code/set-up-analytics-on-an-angular-app-via-google-tag-manager-5c5b31e6f41
 @Injectable({
@@ -18,9 +23,12 @@ export class AnalyticsService {
     private titleService: Title,
     private metaTagService: Meta,
     @Inject(DOCUMENT) private domDoc: Document,
+    private dataLayerCustomDimensions: DataLayerService,
+    private router: Router,
+    private uiService: UiService
   ) {
+    // this.checkForAngularUniversal();
   }
-
 
   private getFulllUrl(path: string) {
     let origin = '';
@@ -171,6 +179,62 @@ export class AnalyticsService {
     }
     this.canonicalLink.setAttribute('href', canonicalUrl);
 
+  }
+
+  /**
+   * Push both page view and custom dimensions (if any) to data layer
+   * @url the url after redirects are complete
+   * @customDimensions custom dimensions to push to data layer
+   * @overridePath optional override the page view url sent to GTM
+   */
+   logPageViewWithCustomDimensions(overridePath: string, customDimensions?: PartialCustomDimensionsSet): void {
+
+    // // Exit function if bot
+    // if (this.isBot) {
+    //   console.log('Bot detected, not logging page view');
+    //   return;
+    // }
+
+    this.uiService.isAngularUniversal
+      .pipe(take(1))
+      .subscribe(isAngularUniversal => {
+        // Exit function if is Angular Universal
+        if (isAngularUniversal) {
+          console.log('Angular Universal detected, not logging page view');
+          return;
+        }
+
+        if (!customDimensions) {
+          customDimensions = {};
+        }
+
+        this.updateCustomDimensions(customDimensions);
+        this.logPageView(overridePath);
+      });
+  }
+
+  private updateCustomDimensions(customDimensions: PartialCustomDimensionsSet) {
+    this.dataLayerCustomDimensions.dimensions = customDimensions;
+    this.dataLayerCustomDimensions.trigger(); // Push custom dimensions to data layer via service
+  }
+
+  private logPageView(overridePath: string) {
+
+    const path = this.router.url; // Will include parameters
+    const title = this.titleService.getTitle();
+    const fullUrl = this.getFulllUrl(path);
+
+    // Create page view object
+    const pageViewObject = {
+      event: 'virtualPageview',
+      virtualPagePath: overridePath || path, // Prefer overridePath to avoid parameters
+      virtualPageTitle: title,
+      virtualPageLocation: fullUrl
+    };
+
+    console.log('Logging pageview', pageViewObject);
+
+    (window as any).dataLayer.push(pageViewObject); // Push page view to datalayer
   }
 
 

@@ -4,6 +4,7 @@ import { LegalBusinessNames } from 'shared-models/meta/business-info.model';
 import { metaTagsContentPages } from 'shared-models/meta/metatags.model';
 import { WebDomains } from 'shared-models/meta/web-urls.model';
 import { PublicAppRoutes } from 'shared-models/routes-and-paths/app-routes.model';
+import { AnalyticsService } from 'src/app/core/services/analytics/analytics.service';
 
 
 @Component({
@@ -19,6 +20,7 @@ export class TermsAndConditionsComponent implements OnInit {
 
   constructor(
     private titleService: Title,
+    private analyticsService: AnalyticsService
   ) { }
 
   ngOnInit() {
@@ -27,10 +29,10 @@ export class TermsAndConditionsComponent implements OnInit {
 
   // Add async data as needed and fire once loaded
   private configSeoAndAnalytics() {
-
     const title = metaTagsContentPages.ignflpPublic.termsAndConditionsMetaTitle;
+    const canonicalUrlPath = PublicAppRoutes.PRIVACY_POLICY;
     this.titleService.setTitle(title);
-
+    this.analyticsService.logPageViewWithCustomDimensions(canonicalUrlPath);
   }
 
 }
