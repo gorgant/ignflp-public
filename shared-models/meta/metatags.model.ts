@@ -1,4 +1,4 @@
-import { LegalBusinessNames, ShorthandBusinessNames } from './business-names.model';
+import { LegalBusinessNames, ShorthandBusinessNames } from './business-info.model';
 import { PublicIconPaths } from '../../shared-models/routes-and-paths/icon-paths.model';
 import { PublicImagePaths } from '../../shared-models/routes-and-paths/image-paths.model';
 import { SocialHandles } from './social-urls.model';

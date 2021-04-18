@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
-import { LegalBusinessNames, ShorthandBusinessNames } from 'shared-models/meta/business-names.model';
+import { BusinessMailingAddresses } from 'shared-models/meta/business-info.model';
+import { LegalBusinessNames, ShorthandBusinessNames } from 'shared-models/meta/business-info.model';
 import { metaTagsContentPages } from 'shared-models/meta/metatags.model';
 import { WebDomains } from 'shared-models/meta/web-urls.model';
 
@@ -14,6 +15,7 @@ export class PrivacyPolicyComponent implements OnInit {
   legalBusinessName = LegalBusinessNames.IGNFLP;
   shorthandBusinessName = ShorthandBusinessNames.IGNFLP;
   businessDomain = WebDomains.IGNFLP;
+  businessAddress = BusinessMailingAddresses.IGNFLP;
 
   constructor(
     private titleService: Title,

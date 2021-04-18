@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "dist/ignflp-public",
+    "public": "dist/ignflp-public/browser",
     "ignore": [
       "firebase.json",
       "**/.*",

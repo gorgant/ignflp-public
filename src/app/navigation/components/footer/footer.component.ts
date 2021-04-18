@@ -5,7 +5,7 @@ import { filter, map } from 'rxjs/operators';
 import { now } from 'moment';
 import { PublicAppRoutes } from 'shared-models/routes-and-paths/app-routes.model';
 import { SocialUrls } from 'shared-models/meta/social-urls.model';
-import { LegalBusinessNames } from 'shared-models/meta/business-names.model';
+import { LegalBusinessNames } from 'shared-models/meta/business-info.model';
 import { PublicIconPaths } from 'shared-models/routes-and-paths/icon-paths.model';
 import { PublicAppFragments } from 'shared-models/routes-and-paths/app-fragments.model';
 

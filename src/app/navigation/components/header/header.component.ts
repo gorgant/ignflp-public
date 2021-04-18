@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { filter, map } from 'rxjs/operators';
 import { Router, NavigationEnd } from '@angular/router';
 import { PublicAppRoutes } from 'shared-models/routes-and-paths/app-routes.model';
-import { ShorthandBusinessNames } from 'shared-models/meta/business-names.model';
+import { ShorthandBusinessNames } from 'shared-models/meta/business-info.model';
 import { MatButton } from '@angular/material/button';
 import { LogoPaths } from 'shared-models/routes-and-paths/logo-paths.model';
 import { PublicAppFragments } from 'shared-models/routes-and-paths/app-fragments.model';
