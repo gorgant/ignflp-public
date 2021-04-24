@@ -10,7 +10,7 @@ import { UiService } from './core/services/ui.service';
 })
 export class AppComponent implements OnInit {
   title = metaTagDefaults.ignflpPublic.metaTagDefaultTitle;
-  appVersion = '0.0.3'
+  appVersion = '0.0.4'
 
   @ViewChild('sidenav', { static: true }) sidenav!: MatSidenav;
 
