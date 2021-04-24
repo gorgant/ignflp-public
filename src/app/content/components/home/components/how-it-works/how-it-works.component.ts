@@ -7,8 +7,8 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class HowItWorksComponent implements OnInit {
 
-  @Input() buildYourOwnPlanUrl!: string;
-  @Input() tryOneOfOursUrl!: string;
+  @Input() customPlanUrl!: string;
+  @Input() prebuiltPlanUrl!: string;
 
   constructor() { }
 

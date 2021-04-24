@@ -213,6 +213,20 @@ export class AnalyticsService {
       });
   }
 
+  logSignUpClickWithCustomDimensions(customDimensions?: PartialCustomDimensionsSet) {
+    if (!customDimensions) {
+      customDimensions = {};
+    }
+    this.updateCustomDimensions(customDimensions);
+
+    const buttonClickObject = {
+      event: 'signUpClick',
+    };
+    console.log('Logging signUpClick');
+    (window as any).dataLayer.push(buttonClickObject); // Push page view to datalayer
+
+  }
+
   private updateCustomDimensions(customDimensions: PartialCustomDimensionsSet) {
     this.dataLayerCustomDimensions.dimensions = customDimensions;
     this.dataLayerCustomDimensions.trigger(); // Push custom dimensions to data layer via service

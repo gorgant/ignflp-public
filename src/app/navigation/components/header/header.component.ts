@@ -9,6 +9,7 @@ import { MatButton } from '@angular/material/button';
 import { LogoPaths } from 'shared-models/routes-and-paths/logo-paths.model';
 import { PublicAppFragments } from 'shared-models/routes-and-paths/app-fragments.model';
 import { WebSiteUrls } from 'shared-models/meta/web-urls.model';
+import { GtmTagClasses } from 'shared-models/analytics/gtm-tags.model';
 
 @Component({
   selector: 'app-header',
@@ -23,8 +24,12 @@ export class HeaderComponent implements OnInit {
   shorthandBusinessName = ShorthandBusinessNames.IGNFLP;
   logoPaths = LogoPaths;
   appFragments = PublicAppFragments;
-  ignyteAppSignup = WebSiteUrls.IGNFAPP_SIGNUP;
-  ignyteAppLogin = WebSiteUrls.IGNFAPP_LOGIN;
+  ignyteAppSignupUrl = WebSiteUrls.IGNFAPP_SIGNUP;
+  ignyteAppLoginUrl = WebSiteUrls.IGNFAPP_LOGIN;
+  beginLoginTag = GtmTagClasses.BEGIN_LOGIN_TAG
+  beginSignupTag = GtmTagClasses.BEGIN_SIGNUP_TAG;
+  viewHowIgnyteWorksTag = GtmTagClasses.VIEW_HOW_IGNYTE_WORKS_TAG;
+  viewAboutUsTag = GtmTagClasses.VIEW_ABOUT_US_TAG;
   
 
   constructor(

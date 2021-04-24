@@ -4,13 +4,15 @@ import { MaterialModule } from '../material/material.module';
 import { PageHeroComponent } from './components/page-hero/page-hero.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { AvatarPortraitComponent } from './components/avatar-portrait/avatar-portrait.component';
+import { GetStartedComponent } from './components/get-started/get-started.component';
 
 
 
 @NgModule({
   declarations: [
     PageHeroComponent,
-    AvatarPortraitComponent
+    AvatarPortraitComponent,
+    GetStartedComponent
   ],
   imports: [
     CommonModule,
@@ -22,7 +24,8 @@ import { AvatarPortraitComponent } from './components/avatar-portrait/avatar-por
     MaterialModule,
     FlexLayoutModule,
     PageHeroComponent,
-    AvatarPortraitComponent
+    AvatarPortraitComponent,
+    GetStartedComponent
   ]
 })
 export class SharedModule { }

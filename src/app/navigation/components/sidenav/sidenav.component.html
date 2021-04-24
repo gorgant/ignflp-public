@@ -11,6 +11,7 @@
     </a>
 
     <a mat-list-item 
+      [ngClass]="viewHowIgnyteWorksTag"
       routerLinkActive="active-list-item"
       routerLink="#" 
       [fragment]="appFragments.HOW_IGNYTE_WORKS"
@@ -20,6 +21,7 @@
     </a>
     
     <a mat-list-item 
+      [ngClass]="viewAboutUsTag"
       routerLinkActive="active-list-item"
       routerLink="#" 
       [fragment]="appFragments.ABOUT"
@@ -33,8 +35,8 @@
   
   <div class="action-buttons-container" fxLayout="column" fxLayoutGap="16px" fxFlex fxLayoutAlign="flex-end">
     <!-- <mat-divider></mat-divider> -->
-    <a class="signup-button" mat-raised-button [href]="ignyteAppSignup" color="primary">SIGN UP</a>
-    <a class="login-button" mat-button [href]="ignyteAppLogin">LOGIN</a>
+    <a [ngClass]="beginSignupTag" mat-raised-button [href]="ignyteAppSignupUrl" color="primary">SIGN UP</a>
+    <a [ngClass]="beginLoginTag" mat-button [href]="ignyteAppLoginUrl">LOGIN</a>
   </div>
   
 

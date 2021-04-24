@@ -50,20 +50,6 @@
   color: $font-subheader-color;
 }
 
-.cta-header {
-  text-align: center;
-  color: $primary;
-  font-size: 32px;
-  font-weight: 300;
-}
-
-.cta-box {
-  width: 100%;
-  max-width: 600px;
-  padding: 32px;
-  border: 2px solid $primary;
-}
-
 @media screen and (max-width: $mobile-cutoff-width) {
   .component-container {
     margin: 16px;

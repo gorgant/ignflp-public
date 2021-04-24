@@ -1,11 +1,11 @@
 <div class="home-content-container" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="32px" #home>
   
   <app-page-hero [heroData]="heroData">
-    <a class="hero-button" [href]="[buildYourOwnPlanUrl]" mat-raised-button color="primary">Build Your Own Plan</a>
-    <a class="hero-button" [href]="[tryOneOfOursUrl]" mat-raised-button >Try One of Ours</a>
+    <a class="hero-button" [ngClass]="customPlanTagClass" [href]="[customPlanUrl]" mat-raised-button color="primary">Build Your Own Plan</a>
+    <a class="hero-button" [ngClass]="prebuiltPlanTagClass" [href]="[prebuiltPlanUrl]" mat-raised-button >Try One of Ours</a>
   </app-page-hero>
   <div #howItWorks></div>
-  <app-how-it-works [buildYourOwnPlanUrl]="buildYourOwnPlanUrl" [tryOneOfOursUrl]="tryOneOfOursUrl"></app-how-it-works>
+  <app-how-it-works [customPlanUrl]="customPlanUrl" [prebuiltPlanUrl]="prebuiltPlanUrl"></app-how-it-works>
   <div #about></div>
   <app-about></app-about>
 

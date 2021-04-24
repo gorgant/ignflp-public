@@ -8,6 +8,7 @@ import { SocialUrls } from 'shared-models/meta/social-urls.model';
 import { LegalBusinessNames } from 'shared-models/meta/business-info.model';
 import { PublicIconPaths } from 'shared-models/routes-and-paths/icon-paths.model';
 import { PublicAppFragments } from 'shared-models/routes-and-paths/app-fragments.model';
+import { GtmTagClasses } from 'shared-models/analytics/gtm-tags.model';
 
 @Component({
   selector: 'app-footer',
@@ -26,6 +27,9 @@ export class FooterComponent implements OnInit {
   appRoutes = PublicAppRoutes;
   socialUrls = SocialUrls;
   currentDate!: number;
+
+  viewHowIgnyteWorksTag = GtmTagClasses.VIEW_HOW_IGNYTE_WORKS_TAG;
+  viewAboutUsTag = GtmTagClasses.VIEW_ABOUT_US_TAG;
 
   constructor(
     private router: Router,

@@ -1,6 +1,7 @@
 import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { GtmTagClasses } from 'shared-models/analytics/gtm-tags.model';
 import { PageHeroData } from 'shared-models/components/page-hero-data.model';
 import { ImageProps } from 'shared-models/images/image-props.model';
 import { metaTagDefaults, metaTagsContentPages } from 'shared-models/meta/metatags.model';
@@ -18,8 +19,11 @@ import { AnalyticsService } from 'src/app/core/services/analytics/analytics.serv
 export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
 
   heroData!: PageHeroData;
-  buildYourOwnPlanUrl: string = WebSiteUrls.IGNFAPP_HOME;
-  tryOneOfOursUrl: string = WebSiteUrls.IGNFAPP_HOME;
+  customPlanUrl: string = WebSiteUrls.IGNFAPP_HOME;
+  prebuiltPlanUrl: string = WebSiteUrls.IGNFAPP_HOME;
+  customPlanTagClass = GtmTagClasses.CREATE_CUSTOM_PLAN_TAG;
+  prebuiltPlanTagClass = GtmTagClasses.CREATE_PREBUILT_PLAN_TAG;
+  
   fragmentSubscription!: Subscription;
 
   appFragments = PublicAppFragments;
@@ -90,6 +94,10 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
           break;
       }      
     });
+  }
+
+  onSignUpClick() {
+    this.analyticsService.logSignUpClickWithCustomDimensions();
   }
 
   ngOnDestroy() {

@@ -17,11 +17,11 @@
         </li>
         
         <li class="nav-list-item">
-            <a class="nav-item" routerLinkActive="nav-item-active" routerLink="#" [fragment]="appFragments.HOW_IGNYTE_WORKS">How Ignyte Works</a>
+            <a class="nav-item" [ngClass]="viewHowIgnyteWorksTag" routerLinkActive="nav-item-active" routerLink="#" [fragment]="appFragments.HOW_IGNYTE_WORKS">How Ignyte Works</a>
         </li>
         
         <li class="nav-list-item">
-          <a class="nav-item" routerLinkActive="nav-item-active" routerLink="#" [fragment]="appFragments.ABOUT">About Us</a>
+          <a class="nav-item" [ngClass]="viewAboutUsTag" routerLinkActive="nav-item-active" routerLink="#" [fragment]="appFragments.ABOUT">About Us</a>
         </li>
       </ul>
     </div>
@@ -29,8 +29,8 @@
     <!-- Menue Icon: Only display if screen is sm or less -->
     <div fxFlex fxLayoutAlign="flex-end" >
       <div class="nav-actions" fxLayoutAlign="center center" fxHide fxLayoutGap="16px" fxShow.gt-sm>
-        <a class="login-button" mat-button [href]="ignyteAppLogin">LOGIN</a>
-        <a class="signup-button" mat-raised-button [href]="ignyteAppSignup" color="primary">SIGN UP</a>
+        <a [ngClass]="beginLoginTag" mat-button [href]="ignyteAppLoginUrl">LOGIN</a>
+        <a [ngClass]="beginSignupTag" mat-raised-button [href]="ignyteAppSignupUrl" color="primary">SIGN UP</a>
       </div>
       <div class="menu-button" fxLayoutAlign="center center" fxHide.gt-sm>
         <button (click)="onToggleSidenav()" aria-label="menu" #matButton mat-icon-button >
