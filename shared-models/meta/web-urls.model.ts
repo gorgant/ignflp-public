@@ -1,6 +1,7 @@
 export enum WebDomains {
   IGNFLP = 'ignytefit.com',
-  IGNFAPP = 'app.ignytefit.com'
+  IGNFAPP_PUBLIC = 'app.ignytefit.com',
+  IGNFAPP_ADMIN = 'admin.ignytefit.com'
 }
 
 export enum WebSiteUrls {

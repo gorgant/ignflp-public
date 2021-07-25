@@ -24,8 +24,8 @@ export class HeaderComponent implements OnInit {
   shorthandBusinessName = ShorthandBusinessNames.IGNFLP;
   logoPaths = LogoPaths;
   appFragments = PublicAppFragments;
-  ignyteAppSignupUrl = WebSiteUrls.IGNFAPP_SIGNUP;
-  ignyteAppLoginUrl = WebSiteUrls.IGNFAPP_LOGIN;
+  ignyteAppSignupUrl = WebSiteUrls.IGNFAPP_HOME; // TODO: update to signup link when live
+  ignyteAppLoginUrl = WebSiteUrls.IGNFAPP_HOME; // TODO: update to signup link when live
   beginLoginTag = GtmTagClasses.BEGIN_LOGIN_TAG
   beginSignupTag = GtmTagClasses.BEGIN_SIGNUP_TAG;
   viewHowIgnyteWorksTag = GtmTagClasses.VIEW_HOW_IGNYTE_WORKS_TAG;
